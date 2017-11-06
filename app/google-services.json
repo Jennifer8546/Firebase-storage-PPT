@@ -189,6 +189,50 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803852709061:android:272cca2996e96e6f",
+        "android_client_info": {
+          "package_name": "com.example.a123.pptviewer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "803852709061-19vjo5910k08na6251gd1k1rm4lj4qe1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.a123.pptviewer",
+            "certificate_hash": "49a3d445db6a77f12dde8747c091afd5559125cd"
+          }
+        },
+        {
+          "client_id": "803852709061-sisipeats9j6gbv1suq5gih8bf4oje55.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg_F-mgslVs2LKNIt-9vDAtlLd04d27f0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "803852709061-sisipeats9j6gbv1suq5gih8bf4oje55.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"
