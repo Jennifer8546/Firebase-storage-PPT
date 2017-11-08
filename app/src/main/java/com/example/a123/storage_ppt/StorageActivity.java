@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -35,6 +37,8 @@ public class StorageActivity extends AppCompatActivity implements View.OnClickLi
     private StorageReference StorageRef;
     CheckBox Share;
     String Filename;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("Upload");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,13 +68,15 @@ public class StorageActivity extends AppCompatActivity implements View.OnClickLi
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("上傳中......");
             progressDialog.show();
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference();//屬性命名為message
 
             if (Share.isChecked() == true) {
                 Filename = "Public/";
             } else {
                 Filename = "Pravite/";
             }
-
+            myRef.child("Upload").child(Filename).child(NameText.getText().toString()).child("PPT'sName").setValue(NameText.getText().toString());
             StorageReference riversRef = StorageRef.getStorage().getReference().child(Filename).child(NameText.getText().toString());
             riversRef.putFile(filepath)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
